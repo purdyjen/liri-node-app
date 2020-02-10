@@ -3,10 +3,10 @@ var keys = require("./keys.js");
 var axios = require("axios");
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
-var command = process.argv[2];
 var moment = require("moment");
 var colors = require("colors");
 var fs = require("fs");
+var command = process.argv[2];
 var artist = process.argv.slice(3).join("+");
 var song = process.argv.slice(3).join("+");
 var title = process.argv.slice(3).join("+");
@@ -170,10 +170,6 @@ function movie() {
 
 function doWhat() {
 
-
-var fs = require("fs");
-
-
 fs.readFile("random.txt", "utf8", function(error, data) {
 
   if (error) {
@@ -198,13 +194,9 @@ fs.readFile("random.txt", "utf8", function(error, data) {
     case "movie-this":
         movie();
         break;
-    case "do-what-it-says":
-        doWhat();
-        break;
 }
 });
 }
-
 
 function append() {
   
